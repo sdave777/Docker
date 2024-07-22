@@ -2,7 +2,7 @@
 import joblib
 import pandas as pd
 
-PATH = "../models/artifacts.joblib"
+PATH = "./models/artifacts.joblib"
 ARTIFACT = joblib.load(PATH)
 MODEL = None
 PREPROCESSOR = None

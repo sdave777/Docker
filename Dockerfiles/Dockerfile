@@ -1,0 +1,16 @@
+# Use the full-size Debian-based Python image
+FROM python:3.11.7-bullseye
+
+# Set the working directory
+WORKDIR /app
+
+# Copy only the necessary files
+COPY requirements.txt .
+COPY src/mushroom_model.py .
+COPY models/ models/
+
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Set the default command to run the model
+CMD ["python", "mushroom_model.py"]
